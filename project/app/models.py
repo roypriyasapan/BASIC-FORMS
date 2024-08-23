@@ -6,3 +6,4 @@ class Registration(models.Model):
     lname=models.CharField(max_length=20)
     email=models.EmailField()
     contact=models.IntegerField()
+

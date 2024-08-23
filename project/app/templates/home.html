@@ -1,10 +1,13 @@
+<center>
 <h1> Ragistration From  </h1>
 
 <form method="POST">
     {% csrf_token %}
     {{form}}
+    {{msg}}
     <button type="submit">Submit</button>
 </form>
+
 {% if data %}
    {% for  i in data %}
    {{i.fname }}
@@ -13,3 +16,4 @@
    {{i.contact}}
    {% endfor %}
 {% endif %}
+</center>
