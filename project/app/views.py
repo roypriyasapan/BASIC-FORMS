@@ -30,6 +30,29 @@ def home(request):
     #         # data={"fname":fname,"lname":lname,"email":email,"contact":contact}
     #         # RegistrationForm.object.create()
     #         form.save()
-def login(request):
+def Login(request):
     form=LoginForm()
+    if request.method== 'POST':
+            data=LoginForm(request.POST)
+            Login_email=form.cleaned_data["email"]
+            Login_contact=form.cleaned_data["contact"]
+            # print(email ,contact)
+            uder= Registration.objects.filter(email=Login_email)
+            if user:
+                 user = Registration.objects.get(email=Login_email)
+                 print(user)      
+
     return render(request,'login.html',{'form':form})
+
+
+def login_data(request):
+    form=LoginForm()
+    if request.method== 'POST':
+            data=LoginForm(request.POST)
+            Login_email=form.cleaned_data["email"]
+            Login_contact=form.cleaned_data["contact"]
+            # print(email ,contact)
+            uder= Registration.objects.filter(email=Login_email)
+            if user:
+                 user = Registration.objects.get(email=Login_email)
+                 print(user)

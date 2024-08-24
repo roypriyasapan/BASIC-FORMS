@@ -7,3 +7,6 @@ class Registration(models.Model):
     email=models.EmailField()
     contact=models.IntegerField()
 
+class login(models.Model):
+    email=models.EmailField()
+    contact=models.IntegerField()
